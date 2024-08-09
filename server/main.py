@@ -95,4 +95,4 @@ def alert(text: str, sid=None):
     emit("alert", text, broadcast=True)
 
 # サーバーの起動
-socketio.run(app)
+socketio.run(app, host="localhost", port=5000)
