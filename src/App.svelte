@@ -6,7 +6,7 @@
   import Sugoroku from "./Sugoroku.svelte";
 
   let isGameStarted = false;  // ゲームが始まっているかどうか
-  const socket = connect("http://localhost:5000");
+  const socket = connect("http://localhost:5555");
 
   // 一般メッセージを受信した場合
   socket.on("alert", text=>{
