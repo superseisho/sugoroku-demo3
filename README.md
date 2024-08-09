@@ -10,7 +10,7 @@
 
 （ゲームサーバーの開発環境）
 
-4. PC内にAnaconda等で仮想環境を構築し、`pip install flask flask-socketio`を実行、パッケージをインストールする
+4. PC内にAnaconda等で仮想環境を構築し、`pip install flask flask-socketio`を実行、パッケージをインストールする（`conda`環境において`pip`コマンドが使えない場合には`conda install pip`で先に`pip`をインストールしておく）
 5. ターミナルで`server`フォルダ内に移動し、**4.で作成した仮想環境において**`python main.py`でサーバーを起動
 
 ## クライアントの本番用ビルド
