@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
 from flask_socketio import SocketIO, emit
+import os
 from typing import TypedDict
 from random import randrange
 
@@ -98,4 +99,5 @@ def alert(text: str, sid=None):
     emit("alert", text, broadcast=True)
 
 # サーバーの起動
-socketio.run(app, host="localhost", port=5555, debug=True)
+port = int(os.environ.get("PORT", 5555))
+socketio.run(app, host="localhost", port=port, debug=True)
