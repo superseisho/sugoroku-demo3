@@ -62,10 +62,6 @@ class Game:
 player_list = []
 game = None
 
-@app.route("/")
-def home():
-  return render_template("index.html")
-
 # プレイヤーの参加リクエストが来たとき
 @socketio.on("join")
 def on_join(playername):
