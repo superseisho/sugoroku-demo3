@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from flask_socketio import SocketIO, emit
 from typing import TypedDict
 from random import randrange
@@ -62,6 +62,9 @@ class Game:
 player_list = []
 game = None
 
+@app.route("/")
+def home():
+  return render_template("index.html")
 
 # プレイヤーの参加リクエストが来たとき
 @socketio.on("join")
