@@ -100,4 +100,4 @@ def alert(text: str, sid=None):
 
 # サーバーの起動
 port = int(os.environ.get("PORT", 5555))
-socketio.run(app, host="localhost", port=port, debug=True)
+socketio.run(app, host="localhost", port=port, debug=True, allow_unsafe_werkzeug=True)
