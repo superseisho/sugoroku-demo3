@@ -6,7 +6,7 @@
   import Sugoroku from "./Sugoroku.svelte";
 
   let isGameStarted = false;  // ゲームが始まっているかどうか
-  const socket = connect("http://localhost:5555");
+  const socket = connect(location.href);
 
   // 一般メッセージを受信した場合
   socket.on("alert", text=>{
@@ -17,6 +17,8 @@
   socket.on("started", ()=>{
     isGameStarted = true;
   })
+
+  let test = location.href;
 </script>
 
 
