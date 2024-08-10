@@ -4,7 +4,7 @@ from typing import TypedDict
 from random import randrange
 
 # Flaskの初期設定
-app = Flask(__name__)
+app = Flask(__name__, template_folder="../dist", static_folder="../dist/assets")
 app.config["SECRET_KEY"] = "secretkey"
 socketio = SocketIO(app, cors_allowed_origins="*")
 
@@ -61,6 +61,10 @@ class Game:
 
 player_list = []
 game = None
+
+@app.route("/")
+def home():
+  return render_template("index.html")
 
 # プレイヤーの参加リクエストが来たとき
 @socketio.on("join")
